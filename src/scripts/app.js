@@ -1,6 +1,7 @@
 const HOURS = Array.from({ length: 9 }, (_, i) => i + 9) // 9AM to 5PM
 let tasks = {}
-let currentDate = new Date().toISOString().split('T')[0]
+let date = new Date()
+let currentDate = `${date.getFullYear()}-0${date.getMonth() + 1}-${date.getDate()}`
 
 // Initialize the app
 async function init() {
@@ -95,19 +96,25 @@ function createTimeblock(hour) {
 }
 
 function updateTimeblockColors() {
-  const currentHour = new Date().getHours()
+  const currentHour = Math.floor(new Date().getTime() / 1000 / 60 / 60)
   
   HOURS.forEach(hour => {
+    const date = new Date(currentDate)
+    const time = Math.floor(date.getTime() / 1000 / 60 / 60)
     const timeblock = document.querySelector(`[data-hour="${hour}"]`)
     if (!timeblock) return
 
     timeblock.classList.remove('past', 'present', 'future')
-    if (hour < currentHour) {
+    
+    if (time < currentHour) {
       timeblock.classList.add('past')
-    } else if (hour === currentHour) {
+      console.log("past")
+    } else if (time === currentHour) {
       timeblock.classList.add('present')
+      console.log("present")
     } else {
       timeblock.classList.add('future')
+      console.log("future")
     }
   })
 }
@@ -135,6 +142,7 @@ function clearAllTasks() {
     tasks[currentDate] = {}
     localStorage.setItem('plannerTasks', JSON.stringify(tasks))
     renderTimeblocks()
+    updateTimeblockColors()
   }
 }
 
