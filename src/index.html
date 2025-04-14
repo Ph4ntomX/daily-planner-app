@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Daily Planner</h1>
+        <div class="time-slots">
+            <div class="time-slot" id="slot-9">
+                <div class="time">9 AM</div>
+                <input type="text" class="task-input" placeholder="Add your task here...">
+                <button class="add-task">Add</button>
+                <button class="edit-task">Edit</button>
+                <button class="remove-task">Remove</button>
+            </div>
+            <div class="time-slot" id="slot-10">
+                <div class="time">10 AM</div>
+                <input type="text" class="task-input" placeholder="Add your task here...">
+                <button class="add-task">Add</button>
+                <button class="edit-task">Edit</button>
+                <button class="remove-task">Remove</button>
+            </div>
+            <!-- Repeat for other time slots as needed -->
+        </div>
+        <button class="clear-all">Clear All</button>
+        <button class="toggle-dark-mode">Toggle Dark Mode</button>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

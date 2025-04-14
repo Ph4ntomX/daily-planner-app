@@ -1,0 +1,92 @@
+/* General styles for the daily planner */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container for the planner */
+.planner-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Styles for each time slot */
+.time-slot {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Past time slots */
+.past {
+    background-color: #d3d3d3;
+}
+
+/* Current hour time slot */
+.current {
+    background-color: #ffcccb;
+}
+
+/* Future time slots */
+.future {
+    background-color: #d4edda;
+}
+
+/* Input field for tasks */
+.task-input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* Button styles */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Clear All button */
+.clear-all {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+/* Dark Mode styles */
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-mode .planner-container {
+    background-color: #444;
+}
+
+.dark-mode .time-slot {
+    border-bottom: 1px solid #555;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .planner-container {
+        padding: 10px;
+    }
+
+    .time-slot {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-input {
+        margin-bottom: 10px;
+    }
+}
