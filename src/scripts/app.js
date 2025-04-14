@@ -185,6 +185,7 @@ function handleDrop(e) {
     saveTask(dropHour, dragTask)
     
     renderTimeblocks()
+    updateTimeblockColors()
   }
 }
 
